@@ -5,6 +5,6 @@ Trata-se de um sistema web para uma gráfica rápida, que oferece serviços de i
 
 ## Tecnologias utilizadas
 
-- Frontend: HTML, CSS, JavaScript
+- Frontend: HTML, CSS, Bootstrap
 - Backend: PHP
 - Banco de dados: MySQL (utilizando XAMPP para ambiente local)
