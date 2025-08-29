@@ -1,0 +1,53 @@
+<?php require_once 'includes/cabecalho.php'; ?>
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+
+        <?php
+        if (isset($_GET['status'])):
+            $status = $_GET['status'];
+            switch ($status) {
+                case 'erro_campos':
+                    echo '<div class="alert alert-danger mt-3">Por favor, preencha e-mail e senha.</div>';
+                    break;
+                case 'erro_login':
+                    echo '<div class="alert alert-danger mt-3">As credenciais estão erradas.</div>';
+                    break;
+                case 'sucesso_cadastro':
+                    echo '<div class="alert alert-success mt-3">Cadastro realizado com sucesso! Faça o login.</div>';
+                    break;
+                default:
+                    break;
+            }
+        endif;
+        ?>
+
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h3 class="text-center">Login no Sistema</h3>
+            </div>
+            <div class="card-body">
+                <form action="controllers/usuarioController.php" method="POST">
+                    <input type="hidden" name="opcao" value="login">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="senha" name="senha" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-dark">Entrar</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card-footer text-center">
+                <p>Não tem uma conta? <a href="cadastro.php">Cadastre-se gratuitamente</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php require_once 'includes/rodape.php'; ?>
